@@ -7,7 +7,7 @@ const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
-app.use("/items", itemsRouter);
+app.use("/api/items", itemsRouter);
 
 (async () => {
     const db = await connectDB();
