@@ -30,9 +30,19 @@ export function sum_to_n_c(n: number): number {
     return n + sum_to_n_c(n - 1);
 }
 
+/**
+ * Approach D - Using Array.from() + reduce()
+ * Time complexity: O(n)
+ * Space complexity: O(n)
+ */
+export function sum_to_n_d(n: number): number {
+    return Array.from({ length: n }, (_, i) => i + 1).reduce((a, b) => a + b, 0);
+}
+
 if (require.main === module) {
     const n = 5;
     console.log("sum_to_n_a:", sum_to_n_a(n)); // 15
     console.log("sum_to_n_b:", sum_to_n_b(n)); // 15
     console.log("sum_to_n_c:", sum_to_n_c(n)); // 15
+    console.log("sum_to_n_d:", sum_to_n_d(n)); // 15
 }

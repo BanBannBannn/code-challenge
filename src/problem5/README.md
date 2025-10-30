@@ -24,6 +24,11 @@ Develop a backend server using **ExpressJS** and **TypeScript** that supports ba
 ```bash
 cd src/problem5
 npm install
+
+# Run automated API tests (Jest + Supertest)
+npm run test
+
+# Run the server
 npx ts-node server.ts
 ```
 

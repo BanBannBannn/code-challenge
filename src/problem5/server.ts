@@ -2,12 +2,14 @@ import express from "express";
 import bodyParser from "body-parser";
 import itemsRouter from "./routes/items";
 import { connectDB } from "./db/db";
+import {globalErrorHandler} from "./utils/globalErrorHandler";
 
 const app = express();
 const PORT = 3000;
 
 app.use(bodyParser.json());
 app.use("/api/items", itemsRouter);
+app.use(globalErrorHandler);
 
 (async () => {
     const db = await connectDB();
